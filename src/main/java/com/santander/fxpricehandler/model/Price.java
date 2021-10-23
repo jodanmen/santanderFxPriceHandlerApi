@@ -4,17 +4,17 @@ import java.io.Serializable;
 import java.time.LocalDateTime;
 import java.util.Objects;
 
-public class Price implements Serializable {
+public final class Price implements Serializable {
 
-    private long id;
+    private final long id;
 
-    private String instrumentName;
+    private final String instrumentName;
 
-    private double bid;
+    private final double bid;
 
-    private double ask;
+    private final double ask;
 
-    private LocalDateTime timestamp;
+    private final LocalDateTime timestamp;
 
     public Price(long id, String instrumentName, double bid, double ask, LocalDateTime timestamp) {
         this.id = id;

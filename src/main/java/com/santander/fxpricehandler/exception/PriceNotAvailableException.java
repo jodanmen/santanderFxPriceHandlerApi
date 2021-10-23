@@ -6,7 +6,4 @@ public class PriceNotAvailableException extends RuntimeException {
         super(message);
     }
 
-    public PriceNotAvailableException(String message, Throwable throwable) {
-        super(message, throwable);
-    }
 }

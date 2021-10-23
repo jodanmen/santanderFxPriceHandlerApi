@@ -49,10 +49,10 @@ public class FxPriceCache {
 
     @Scheduled(cron = "${fxPriceCache.expiry.refreshRate}")
     public void evictExpiredPrices() {
-        fxPriceCache.entrySet().stream().forEach((entry) -> {
-            if (ChronoUnit.DAYS.between(entry.getValue().getTimestamp(), LocalDateTime.now()) > dataExpiryPeriod) {
-                log.info("Removing expired price data for {} from cache", entry.getValue().getInstrumentName());
-                fxPriceCache.remove(entry.getKey());
+        fxPriceCache.forEach((key, value) -> {
+            if (ChronoUnit.DAYS.between(value.getTimestamp(), LocalDateTime.now()) > dataExpiryPeriod) {
+                log.info("Removing expired price data for {} from cache", value.getInstrumentName());
+                fxPriceCache.remove(key);
             }
         });
     }

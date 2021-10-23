@@ -4,7 +4,6 @@ import com.santander.fxpricehandler.exception.PriceTransformationException;
 import com.santander.fxpricehandler.model.Price;
 import org.springframework.stereotype.Service;
 
-import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
